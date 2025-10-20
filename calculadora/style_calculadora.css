@@ -1,0 +1,11 @@
+/* style-calculadora.css (atualizado) */
+body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+.calculadora { width: 320px; border: 1px solid #ccc; border-radius: 10px; overflow: hidden; /* Garante que os cantos arredondados funcionem */ box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.display { background-color: #222; color: white; font-size: 2.5rem; padding: 20px; text-align: right; }
+.botoes { display: grid; grid-template-columns: repeat(4, 1fr); }
+button { padding: 20px; font-size: 1.5rem; border: 1px solid #ddd; cursor: pointer; transition: background-color 0.2s; background-color: #fff; }
+button:hover { background-color: #f0f0f0; }
+.operador { background-color: #f9a825; color: white; }
+.operador:hover { background-color: #fb8c00; }
+.igual { background-color: #43a047; color: white; }
+.igual:hover { background-color: #2e7d32; }

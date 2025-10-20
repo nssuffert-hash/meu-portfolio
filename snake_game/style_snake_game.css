@@ -1,0 +1,55 @@
+/* style-snake.css (atualizado) */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+h1, h2 {
+    color: #333;
+}
+.game-container {
+    position: relative; /* Necessário para posicionar a tela de Game Over */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 5px solid #555; /* Borda externa ao redor do canvas */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+canvas {
+    display: block; /* Remove espaço extra abaixo do canvas */
+    background-color: #333;
+    /* A borda visual agora está no .game-container */
+}
+.game-over {
+    position: absolute; /* Sobrepõe o canvas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hidden {
+    display: none; /* Esconde a tela de Game Over por padrão */
+}
+#tryAgainBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+#tryAgainBtn:hover {
+    background-color: #ddd;
+}
