@@ -1,5 +1,22 @@
 // Aguarda o documento HTML ser completamente carregado para executar o script
 document.addEventListener('DOMContentLoaded', function() {
+    // Menu mobile toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
 
     // Seleciona o formulário pelo seu ID
     const form = document.querySelector('#form-contato');
@@ -37,9 +54,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Simulação do envio: limpa os campos do formulário
         form.reset();
-        // ou manualmente:
-        // nomeInput.value = '';
-        // emailInput.value = '';
-        // mensagemInput.value = '';
     });
 });
