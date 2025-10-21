@@ -7,14 +7,14 @@
 
 /* Variáveis CSS para cores e fontes */
 :root {
-    --primary-color: #6c63ff;
-    --secondary-color: #4a44b5;
-    --accent-color: #ff6584;
-    --dark-color: #2d2b55;
-    --light-color: #f5f5f7;
-    --gray-color: #8a8a8a;
+    --primary-color: #4361ee;
+    --secondary-color: #3a56d4;
+    --accent-color: #7209b7;
+    --dark-color: #1e1e2c;
+    --light-color: #f8f9fa;
+    --gray-color: #6c757d;
     --white: #ffffff;
-    --black: #333333;
+    --black: #212529;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
@@ -87,38 +87,38 @@ section {
 }
 
 .btn-primary {
-    background-color: #FF6B35; /* Laranja vibrante */
+    background-color: var(--primary-color);
     color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: #E55A2B; /* Laranja mais escuro no hover */
+    background-color: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: #FF6B35; /* Laranja vibrante */
-    border: 2px solid #FF6B35;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: #FF6B35;
+    background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
 
 .btn-portfolio {
-    background-color: #2EC4B6; /* Verde água vibrante */
+    background-color: var(--accent-color);
     color: var(--white);
     font-size: 0.9rem;
     padding: 10px 20px;
 }
 
 .btn-portfolio:hover {
-    background-color: #24A396; /* Verde água mais escuro no hover */
+    background-color: #5a08a0;
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
@@ -194,78 +194,68 @@ nav ul li a:hover::after {
     color: var(--dark-color);
 }
 
-/* Hero Section - Foto de Perfil */
-.profile-photo-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 150px 0 100px;
+    margin-top: 70px;
+}
+
+.hero .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-photo-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.profile-photo-container:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .profile-photo {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
-    border: 8px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 2;
-    transition: var(--transition);
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-.photo-frame {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #FF6B35, #2EC4B6, #6c63ff);
-    z-index: 1;
-    animation: rotate 10s linear infinite;
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Efeito de brilho na foto */
-.profile-photo-container::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(255, 107, 53, 0.2), rgba(46, 196, 182, 0.2));
-    border-radius: 50%;
-    z-index: 0;
-    animation: pulse 3s ease-in-out infinite alternate;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1.1);
-        opacity: 0.3;
-    }
 }
 
 /* Sobre Mim Section */
@@ -338,7 +328,7 @@ nav ul li a:hover::after {
 .formacao-icon {
     width: 70px;
     height: 70px;
-    background-color: rgba(108, 99, 255, 0.1);
+    background-color: rgba(67, 97, 238, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -443,7 +433,7 @@ nav ul li a:hover::after {
 .contato-item i {
     width: 40px;
     height: 40px;
-    background-color: rgba(108, 99, 255, 0.1);
+    background-color: rgba(67, 97, 238, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -485,7 +475,7 @@ nav ul li a:hover::after {
 .form-group textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
 }
 
 /* Footer */
@@ -542,6 +532,11 @@ footer p {
     .hero-btns {
         justify-content: center;
     }
+    
+    .profile-photo-container {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -589,6 +584,11 @@ footer p {
         width: 200px;
         text-align: center;
     }
+    
+    .profile-photo-container {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -604,13 +604,9 @@ footer p {
         font-size: 1.1rem;
     }
     
-    .image-placeholder {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .image-placeholder i {
-        font-size: 4rem;
+    .profile-photo-container {
+        width: 220px;
+        height: 220px;
     }
     
     .formacao-grid,
